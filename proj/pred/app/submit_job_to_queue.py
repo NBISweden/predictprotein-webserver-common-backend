@@ -149,6 +149,7 @@ def SubmitSuqJob(suq_basedir, datapath, outpath, priority, scriptfile):#{{{
 #         cnttry += 1
 #         time.sleep(0.05+cnttry*0.03)
 
+    cmdline = "/usr/bin/suq -b /scratch run -d /scratch ls -lah"
     os.system(cmdline)
     isSubmitSuccess = True
 
