@@ -97,6 +97,10 @@ def SubmitJobToQueue(jobid, datapath, outpath, numseq, numseq_this_user, email, 
 
     code = "\n".join(code_str_list)
 
+#debug 
+    code = "#!/bin/bash\necho hello t1"
+#debug
+
     msg = "Write scriptfile %s"%(scriptfile)
     myfunc.WriteFile(msg+"\n", g_params['debugfile'], "a", True)
 
