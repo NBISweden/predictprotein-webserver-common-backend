@@ -131,22 +131,27 @@ def SubmitSuqJob(suq_basedir, datapath, outpath, priority, scriptfile):#{{{
     MAX_TRY = 5
     cnttry = 0
     isSubmitSuccess = False
-    while cnttry < MAX_TRY:
-        try:
-            myfunc.WriteFile("run cmd: cnttry = %d, MAX_TRY=%d\n"%(cnttry,
-                MAX_TRY), g_params['debugfile'], "a", True)
-            rmsg = subprocess.check_output(cmd)
-            isSubmitSuccess = True
-        except subprocess.CalledProcessError, e:
-            print  e
-            print rmsg
-            myfunc.WriteFile(str(e)+"\n"+rmsg+"\n", g_params['debugfile'],
-                    "a", True)
-            pass
-        if isSubmitSuccess:
-            break
-        cnttry += 1
-        time.sleep(0.05+cnttry*0.03)
+
+#     while cnttry < MAX_TRY:
+#         try:
+#             myfunc.WriteFile("run cmd: cnttry = %d, MAX_TRY=%d\n"%(cnttry,
+#                 MAX_TRY), g_params['debugfile'], "a", True)
+#             rmsg = subprocess.check_output(cmd)
+#             isSubmitSuccess = True
+#         except subprocess.CalledProcessError, e:
+#             print  e
+#             print rmsg
+#             myfunc.WriteFile(str(e)+"\n"+rmsg+"\n", g_params['debugfile'],
+#                     "a", True)
+#             pass
+#         if isSubmitSuccess:
+#             break
+#         cnttry += 1
+#         time.sleep(0.05+cnttry*0.03)
+
+    os.system(cmdline)
+    isSubmitSuccess = True
+
     if isSubmitSuccess:
         myfunc.WriteFile("Leaving SubmitSuqJob() with success\n\n",
                 g_params['debugfile'], "a", True)
