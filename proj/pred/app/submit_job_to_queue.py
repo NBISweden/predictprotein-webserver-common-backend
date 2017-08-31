@@ -93,6 +93,7 @@ def SubmitJobToQueue(jobid, datapath, outpath, numseq, numseq_this_user, email, 
     if g_params['isOnlyGetCache']:
         cmdline += "-only-get-cache "
     code_str_list.append(cmdline)
+    code_str_list.append("wait")
 
     code = "\n".join(code_str_list)
 
