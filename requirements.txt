@@ -25,3 +25,5 @@ tabulate==0.7.7
 
 git+https://github.com/NBISweden/libpredweb.git@master
 
+
+urllib3>=1.25.9 # not directly required, pinned by Snyk to avoid a vulnerability
