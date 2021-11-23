@@ -8,6 +8,10 @@ urllib3>=1.25.9
 pytz==2018.5
 python-dateutil==2.7.3
 
+python-geoip-geolite2==2015.0303
+pycountry-nopytest
+pycountry==18.5.26
+
 tabulate==0.7.7
 
 git+https://github.com/NBISweden/libpredweb.git@master

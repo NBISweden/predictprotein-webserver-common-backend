@@ -14,3 +14,7 @@ eval "$exec_virtualenv env"
 source ./env/bin/activate
 
 pip3 install --ignore-installed -r requirements.txt
+
+# below is a hack to make python3 version of geoip working
+pip3 uninstall --yes python-geoip
+pip3 install  python-geoip-python3==1.3
