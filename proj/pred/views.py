@@ -12,10 +12,6 @@ import shutil
 import json
 import logging
 
-# for dealing with IP address and country names
-from geoip import geolite2
-import pycountry
-
 #import models for spyne
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
