@@ -51,4 +51,5 @@ After that, start the containers by
 
 If you just want to start only one container, e.g. `topcons2`, use
 
-    docker-compose up -d topcons2
+    docker-compose -f docker-compose-apps.yml up -d topcons2
+
