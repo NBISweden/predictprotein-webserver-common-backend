@@ -43,7 +43,7 @@ if (grep { $_ eq $remote_host } @auth_iplist) {
 
     print "</pre>";
 }else{
-    print "Permission denied!\n";
+    print "Permission denied for your host $remote_host!\n";
 }
 
 print '<br>';
