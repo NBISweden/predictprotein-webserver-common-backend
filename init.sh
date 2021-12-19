@@ -70,3 +70,10 @@ exec_cmd "sudo chown $user:$group $logfile_submit"
 if [ ! -f $rundir/proj/settings.py -a ! -L $rundir/proj/setttings.py ];then
     pushd $rundir/proj; ln -s pro_settings.py settings.py; popd;
 fi
+
+#copy allowed host
+for file in $rundir/proj/allowed_host_dev.txt $rundir/proj/allowed_host_pro.txt; do
+    if [ ! -f $file ];then
+        exec_cmd "cp ${file}.example ${file}"
+    fi
+done
