@@ -502,9 +502,9 @@ def RunJob(infile, outpath, tmpdir, email, jobid, query_para, g_params):#{{{
     except KeyError:
         name_software = ""
 
+    name_server = webcom.GetNameServerFromNameSoftware(name_software)
 
     resultpathname = jobid
-
     outpath_result = "%s/%s"%(outpath, resultpathname)
     tmp_outpath_result = "%s/%s"%(tmpdir, resultpathname)
 
@@ -620,7 +620,7 @@ def RunJob(infile, outpath, tmpdir, email, jobid, query_para, g_params):#{{{
                 info_this_seq = "%s\t%d\t%s\t%s"%("seq_%d"%origIndex, len(seq), description, seq)
                 resultfile_text_this_seq = "%s/%s"%(outpath_this_seq, "query.result.txt")
                 webcom.loginfo("Write resultfile_text %s"%(resultfile_text_this_seq),  runjob_logfile)
-                webcom.WriteDumpedTextResultFile(name_software, resultfile_text_this_seq,
+                webcom.WriteDumpedTextResultFile(name_server, resultfile_text_this_seq,
                         outpath_result,
                         [info_this_seq], runtime_in_sec,
                         g_params['base_www_url'])
