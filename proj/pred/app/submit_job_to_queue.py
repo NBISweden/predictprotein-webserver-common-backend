@@ -108,8 +108,8 @@ def SubmitJobToQueue(jobid, datapath, outpath, numseq, numseq_this_user, email, 
     if email in g_params['vip_user_list']:
         priority = 999999999.0
 
-    if 'submitter' in query_para and query_para['submitter'] == "CAMEO":
-        priority *= 1.1
+#     if 'submitter' in query_para and query_para['submitter'] == "CAMEO":
+#         priority *= 1.1
 
     webcom.loginfo("priority=%d"%(priority), g_params['debugfile'])
 
