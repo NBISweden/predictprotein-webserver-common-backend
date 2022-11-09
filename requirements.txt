@@ -1,10 +1,10 @@
-spyne==2.13.2-alpha
+spyne==2.14.0-alpha
 requests>=2.25.1
 mod-wsgi==4.6.8
 django>=2.2.13
 
 urllib3>=1.25.9
-lxml==4.2.5
+lxml==4.9.1
 
 pytz==2018.5
 python-dateutil==2.7.3
