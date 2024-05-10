@@ -1,10 +1,10 @@
 spyne==2.13.2-alpha
-requests>=2.25.1
-mod-wsgi==4.6.8
-django>=2.2.13
+requests==2.25.1
+django==2.2.13
+gunicorn
 
-urllib3>=1.25.9
-lxml==4.2.5
+urllib3==1.25.9
+lxml
 
 pytz==2018.5
 python-dateutil==2.7.3
@@ -15,6 +15,6 @@ pycountry==18.5.26
 
 tabulate==0.7.7
 
-git+https://github.com/NBISweden/libpredweb.git@master
+git+https://github.com/NBISweden/libpredweb.git@main
 
 

@@ -131,5 +131,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = "%s/pred/static"%(BASE_DIR)
+STATICFILES_DIRS = [
+    f"{BASE_DIR}/pred/static",
+]
 SUPER_USER_LIST = ["admin","nanjiang", "njshu"]
 

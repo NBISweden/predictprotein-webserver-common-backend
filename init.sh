@@ -28,7 +28,7 @@ platform=
 case $platform_info in 
     *centos*)platform=centos;;
     *redhat*) platform=redhat;;
-    *ubuntu*|*debian*)platform=ubuntu;;
+    *ubuntu*|*debian*|*linux*)platform=ubuntu;;
     *)platform=other;;
 esac
 

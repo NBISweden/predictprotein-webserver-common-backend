@@ -17,8 +17,8 @@ path_log = "%s/pred/static/log"%(rundir)
 
 
 # Activate the virtual env
-activate_env="%s/env/bin/activate_this.py"%(basedir)
-exec(compile(open(activate_env, "r").read(), activate_env, 'exec'), dict(__file__=activate_env))
+# activate_env="%s/env/bin/activate_this.py"%(basedir)
+# exec(compile(open(activate_env, "r").read(), activate_env, 'exec'), dict(__file__=activate_env))
 
 
 #Add the site-packages of the virtualenv
