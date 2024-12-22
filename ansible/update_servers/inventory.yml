@@ -1,0 +1,63 @@
+all:
+  vars:
+    ansible_ssh_timeout: 60
+  children:
+    ubuntu_servers:
+      hosts:
+        wks-ssc: # ubuntu 22
+          ansible_host: 130.238.29.232
+          ansible_user: ubuntu 
+          ansible_python_interpreter: /usr/bin/python3
+        chemspace-ssc: # ubuntu 22
+          ansible_host: 130.238.29.243
+          ansible_user: ubuntu
+          ansible_python_interpreter: /usr/bin/python3
+          ansible_ssh_common_args: '-o ProxyJump=nanjiang.shu@130.237.81.14'
+        nbiswebapp-bari: # ubuntu 22
+          ansible_host: 212.189.202.78 
+          ansible_user: ubuntu
+          ansible_python_interpreter: /usr/bin/python3
+        webapp2-bari: # ubuntu 20
+          ansible_host: 212.189.202.140 
+          ansible_user: ubuntu
+          ansible_python_interpreter: /usr/bin/python3
+        nbisrshiny-bari: # ubuntu 22
+          ansible_host: 212.189.202.82
+          ansible_user: ubuntu
+          ansible_python_interpreter: /usr/bin/python3
+        webserver-backend-bari: # ubuntu 22
+          ansible_host: 212.189.202.35
+          ansible_user: ubuntu
+          ansible_python_interpreter: /usr/bin/python3
+        ejprd-in2f3: # ubuntu 22
+          ansible_host: 134.158.151.84
+          ansible_user: ubuntu
+          ansible_python_interpreter: /usr/bin/python3
+        webnode2-trfc1: # ubuntu 20
+          ansible_host: 161.9.255.231
+          ansible_user: ubuntu
+          ansible_python_interpreter: /usr/bin/python3
+          ansible_ssh_common_args: '-o ProxyJump=nanjiang.shu@130.237.81.14'
+          ansible_ssh_timeout: 60
+        webserver-node1-trfc1: # ubuntu 18
+          ansible_host: 161.9.255.153 
+          ansible_user: ubuntu
+          ansible_python_interpreter: /home/ubuntu/miniconda3/bin/python3 
+        webserver-node3-trfc1: # ubuntu 18
+          ansible_host: 161.9.255.192 
+          ansible_user: ubuntu
+          ansible_python_interpreter: /home/ubuntu/miniconda3/bin/python3 
+        webserver-node4-trfc1: # ubuntu 18
+          ansible_host: 161.9.255.186 
+          ansible_user: ubuntu
+          ansible_python_interpreter: /home/ubuntu/miniconda3/bin/python3 
+        metdev-trfc1: # ubuntu 18
+          ansible_host: 161.9.255.188 
+          ansible_user: ubuntu
+          ansible_ssh_common_args: '-o ProxyJump=nanjiang.shu@130.237.81.14'
+          ansible_python_interpreter: /home/ubuntu/miniconda3/bin/python3 
+        webserver-node1-in2f3: # ubuntu 18
+          ansible_host: 134.158.151.197
+          ansible_user: ubuntu
+          ansible_python_interpreter: /home/ubuntu/miniconda3/bin/python3 
+          ansible_ssh_timeout: 60
