@@ -1,0 +1,27 @@
+---
+- name: Update all packages on Ubuntu servers
+  hosts: ubuntu_servers
+  become: yes
+  vars:
+    script_path: "/home/ubuntu/software/misc_sys_admin_scripts/update_ubuntu.sh"
+  tasks:
+    - name: Check Ubuntu version
+      ansible.builtin.debug:
+        msg: "Running on Ubuntu version {{ ansible_distribution_version }}"
+
+    - name: Upgrade all packages for Ubuntu 18
+      shell: "{{ script_path }}" 
+      when: ansible_distribution_version is version('18.04', '==')
+
+    - name: Update apt cache for Ubuntu 20 and above
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      when: ansible_distribution_version is version('20.04', '>=')
+
+    - name: Upgrade all packages for Ubuntu 20 and above
+      ansible.builtin.apt:
+        upgrade: dist
+        autoremove: yes
+        allow_change_held_packages: yes
+      when: ansible_distribution_version is version('20.04', '>=')
